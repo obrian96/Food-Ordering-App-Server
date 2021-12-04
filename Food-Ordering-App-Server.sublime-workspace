@@ -1,0 +1,364 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"settings",
+				"Preferences: Settings"
+			],
+			[
+				"reind",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings"
+			],
+			[
+				"reinde",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"keyb",
+				"Preferences: Key Bindings"
+			],
+			[
+				"setting",
+				"Preferences: Settings"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Disable Package"
+			],
+			[
+				"colorp",
+				"Color Picker"
+			],
+			[
+				"terminus",
+				"Preferences: Terminus Key Bindings"
+			],
+			[
+				"format",
+				"Formatter: Beautify With Prettier"
+			],
+			[
+				"formatter",
+				"Formatter: Beautify With Beautysh"
+			],
+			[
+				"lint",
+				"SublimeLinter: Lint This View"
+			],
+			[
+				"kotlin",
+				"Build With: Kotlin"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 130.0,
+		"history":
+		[
+			"cd",
+			"where",
+			"pwd"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/F/Workspace/Flutter/Projects/Food-Ordering-App-Server"
+	],
+	"file_history":
+	[
+		"/C/xampp/mysql/data/mysql_error.log",
+		"/F/Workspace/Windows/Batch/bili/black mamba.html",
+		"/C/Users/Akira/AppData/Local/Packages/28017CharlesMilette.TranslucentTB_v826wp6bftszj/RoamingState/settings.json",
+		"/F/Workspace/Flutter/Projects/Food-Ordering-App/android/app/src/main/AndroidManifest.xml",
+		"/F/Workspace/Flutter/Projects/Food-Ordering-App/lib/main.dart",
+		"/F/Workspace/Flutter/Projects/Food-Ordering-App/lib/views/ProfilePage.dart",
+		"/F/Workspace/Flutter/Projects/Food-Ordering-App/lib/models/ApiError.dart",
+		"/F/Workspace/Flutter/Projects/Food-Ordering-App/lib/views/SignupPage.dart",
+		"/F/Workspace/Flutter/Projects/Food-Ordering-App/pubspec.yaml",
+		"/F/Workspace/Flutter/Projects/Food-Ordering-App/lib/views/HomePage.dart",
+		"/F/Workspace/Flutter/Projects/Food-Ordering-App/lib/views/LoginPage.dart",
+		"/F/Workspace/Flutter/Projects/Food-Ordering-App/lib/models/User.dart",
+		"/F/Workspace/Flutter/Projects/Food-Ordering-App/lib/models/UserDetails.dart",
+		"/F/Workspace/Flutter/Projects/Food-Ordering-App/lib/views/User/UserCatalogItem.dart",
+		"/F/Workspace/Flutter/Projects/Food-Ordering-App/lib/services/OrderServices.dart",
+		"/F/Workspace/Flutter/Projects/Food-Ordering-App/lib/services/RestServices.dart",
+		"/F/Workspace/Flutter/Projects/Food-Ordering-App/lib/services/UserServices.dart",
+		"/F/Workspace/Flutter/Projects/Food-Ordering-App/lib/models/ApiRespose.dart",
+		"/F/Workspace/Flutter/Projects/Food-Ordering-App/lib/models/Dish.dart",
+		"/F/Workspace/Flutter/Projects/Food-Ordering-App/lib/models/DishList.dart",
+		"/F/Workspace/Flutter/Projects/Food-Ordering-App/lib/models/Ordersmodel.dart",
+		"/F/Workspace/Flutter/Projects/Food-Ordering-App/lib/generated_plugin_registrant.dart",
+		"/F/Workspace/Flutter/Projects/Food-Ordering-App-Server/fdbms.sql",
+		"/F/Workspace/Flutter/Projects/food_order/lib/main.dart",
+		"/F/Workspace/Flutter/Projects/food_order/pubspec.yaml",
+		"/F/Workspace/Flutter/Projects/food_order/android/app/src/main/AndroidManifest.xml",
+		"/F/Workspace/Flutter/Projects/food_order/android/app/build.gradle",
+		"/F/Workspace/Flutter/Projects/food_order/pubspec.lock",
+		"/F/Workspace/Flutter/Projects/food_order/food_order.iml",
+		"/F/Workspace/Flutter/Projects/food_order/analysis_options.yaml",
+		"/F/Workspace/Flutter/Projects/food_order/.packages",
+		"/F/Workspace/Flutter/Projects/food_order/.metadata",
+		"/F/Workspace/Android/Projects/Termux-App/app/src/main/java/com/termux/app/TermuxActivity.java",
+		"/F/Workspace/Android/Projects/Termux-App/app/src/main/java/com/termux/app/terminal/TermuxTerminalSessionClient.java",
+		"/F/Workspace/Android/Projects/Termux-App/app/src/main/java/com/termux/app/utils/PluginUtils.java",
+		"/F/Workspace/Android/Projects/Termux-App/app/src/main/java/com/termux/app/RunCommandService.java",
+		"/F/Workspace/Android/Projects/Termux-App/terminal-emulator/src/main/java/com/termux/terminal/JNI.java",
+		"/F/Workspace/Android/Projects/Termux-App/terminal-emulator/src/main/jni/termux.c",
+		"/F/Workspace/Android/Projects/Termux-App/app/src/main/java/com/termux/app/settings/properties/TermuxAppSharedProperties.java",
+		"/F/Workspace/Android/Projects/Termux-App/termux-shared/src/main/AndroidManifest.xml",
+		"/F/Workspace/Android/Projects/Termux-App/gradle.properties",
+		"/F/Workspace/Android/Projects/Termux-App/app/src/main/AndroidManifest.xml",
+		"/F/Workspace/Android/Projects/Termux-App/app/build.gradle",
+		"/F/Workspace/Android/Projects/Termux-App/app/src/main/java/com/termux/app/TermuxApplication.java",
+		"/F/Workspace/Android/Sdk/cmdline-tools/latest/bin/sdkmanager.bat",
+		"/C/Users/Akira/Downloads/Compressed/ubuntu-arm-pd-v2.3.1/etc/apt/sources.list",
+		"/F/Workspace/Android/Projects/NTX-Learn-Japanese/app/src/main/res/values/colors.xml",
+		"/F/Workspace/Android/Projects/NTX-Learn-Japanese/app/build.gradle",
+		"/F/Workspace/Android/Projects/AGame/app/src/main/res/values/colors.xml",
+		"/F/Workspace/Android/Projects/AGame/app/src/main/res/values-night/themes.xml",
+		"/F/Workspace/Android/Projects/AGame/app/src/main/res/values/strings.xml",
+		"/F/Workspace/Android/Projects/AGame/app/src/main/res/values/themes.xml",
+		"/F/Workspace/Android/Projects/NTX-Learn-Japanese/gradle/wrapper/gradle-wrapper.properties",
+		"/F/Workspace/Android/Projects/NTX-Learn-Japanese/app/proguard-rules.pro",
+		"/F/Workspace/Android/Projects/NTX-Learn-Japanese/app/.gitignore",
+		"/F/Workspace/Android/Projects/NTX-Learn-Japanese/.gitignore",
+		"/F/Workspace/Android/Projects/NTX-Learn-Japanese/gradle.properties",
+		"/F/Workspace/Android/Projects/NTX-Learn-Japanese/build.gradle",
+		"/F/Workspace/Web/TextWeb/index.html",
+		"/C/Users/Akira/Downloads/Compressed/AIDA64 ExtremeEngineerBusinessNetwork Audit 6.50.5800 [x86 x64] incl KeyGen [CrackingPatching]/How to Install.txt",
+		"/F/Workspace/Android/Prototype/GreenLeaf/app/src/main/java/com/greenleaf/app/ui/MainActivity.kt",
+		"/F/Workspace/Android/Prototype/GreenLeaf/app/build.gradle",
+		"/F/Workspace/Android/Prototype/GreenLeaf/gradle/wrapper/gradle-wrapper.properties",
+		"/F/Workspace/Android/Prototype/GreenLeaf/GreenLeaf.sublime-project",
+		"/F/Workspace/Android/Prototype/GreenLeaf/gradlew.bat",
+		"/C/Users/Akira/AppData/Roaming/Sublime Text/Packages/User/android-build.sublime-build",
+		"/F/Workspace/Android/Prototype/GreenLeaf/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+		"/F/Workspace/Android/Prototype/GreenLeaf/app/src/main/res/values/colors.xml",
+		"/F/Workspace/Android/Prototype/GreenLeaf/app/src/main/res/values/strings.xml",
+		"/F/Workspace/Android/Prototype/GreenLeaf/buildSrc/build.gradle.kts",
+		"/F/Workspace/Android/Prototype/GreenLeaf/gradle.properties",
+		"/F/Workspace/Android/Prototype/GreenLeaf/build.gradle",
+		"/F/Workspace/Android/Prototype/GreenLeaf/gradlew",
+		"/F/Workspace/Android/Prototype/GreenLeaf/local.properties",
+		"/F/Workspace/Android/Prototype/GreenLeaf/settings.gradle",
+		"/F/Workspace/Android/Prototype/GreenLeaf/app/src/main/AndroidManifest.xml",
+		"/F/Workspace/Android/Prototype/GreenLeaf/app/src/main/java/com/greenleaf/app/ui/theme/Color.kt",
+		"/F/Workspace/Android/Prototype/GreenLeaf/app/src/main/res/drawable-v26/ic_launcher_foreground.xml",
+		"/F/Workspace/Android/Prototype/GreenLeaf/app/src/main/java/com/greenleaf/app/ui/JetsnackApp.kt",
+		"/F/Workspace/Android/Prototype/GreenLeaf/app/src/main/res/values-night/themes.xml",
+		"/F/Workspace/Android/Prototype/GreenLeaf/app/src/main/res/values/themes.xml",
+		"/F/Workspace/Android/Prototype/GreenLeaf/buildSrc/src/main/java/com/greenleaf/app/buildsrc/Dependencies.kt",
+		"/C/Users/Akira/AppData/Roaming/Sublime Text/Packages/User/formatter.assets/config/jsonmaxrc.json",
+		"/C/Users/Akira/AppData/Roaming/Sublime Text/Packages/User/formatter.assets/config/stylelintrc.json",
+		"/C/Users/Akira/AppData/Roaming/Sublime Text/Packages/User/formatter.assets/config/htmlminifierrc.json",
+		"/C/Users/Akira/AppData/Roaming/Sublime Text/Packages/User/formatter.assets/config/uncrustifyrc.cfg",
+		"/C/Users/Akira/AppData/Roaming/Sublime Text/Packages/User/formatter.assets/config/uncrustifyrc_objc.cfg",
+		"/C/Users/Akira/AppData/Roaming/Sublime Text/Packages/User/formatter.assets/config/perltidyrc.cfg",
+		"/C/Users/Akira/AppData/Roaming/Sublime Text/Packages/User/formatter.assets/config/beautyshrc.json",
+		"/C/Users/Akira/AppData/Roaming/Sublime Text/Packages/User/formatter.assets/config/blackrc.toml",
+		"/C/Users/Akira/AppData/Roaming/Sublime Text/Packages/User/formatter.assets/config/jsbeautifyrc.json",
+		"/C/Users/Akira/AppData/Roaming/Sublime Text/Packages/User/formatter.assets/config/cleancssrc.json",
+		"/C/Users/Akira/AppData/Roaming/Sublime Text/Packages/User/formatter.assets/config/prettierrc.json",
+		"/C/Users/Akira/AppData/Roaming/Sublime Text/Packages/User/formatter.assets/config/clangformatrc.yaml",
+		"/C/Users/Akira/AppData/Roaming/Sublime Text/Packages/User/formatter.assets/config/htmltidyrc_xml.cfg",
+		"/C/Users/Akira/AppData/Roaming/Sublime Text/Packages/User/formatter.assets/config/htmltidyrc_html.cfg",
+		"/C/Users/Akira/AppData/Roaming/Sublime Text/Packages/User/formatter.assets/config/yapfrc.yapf",
+		"/C/Users/Akira/AppData/Roaming/Sublime Text/Packages/User/formatter.assets/config/eslintrc.json",
+		"/C/Users/Akira/AppData/Roaming/Sublime Text/Packages/User/formatter.assets/config/terserrc.json",
+		"/C/Users/Akira/AppData/Roaming/Sublime Text/Packages/User/formatter.assets/config/rubocoprc.yml",
+		"/C/Users/Akira/AppData/Roaming/Sublime Text/Packages/User/formatter.assets/config/csscombrc.json",
+		"/C/Users/Akira/AppData/Roaming/Sublime Text/Packages/User/formatter.assets/config/phpcsfixerrc.php",
+		"/F/Workspace/Android/Prototype/GreenLeaf/buildSrc/src/main/java/com/example/jetsnack/buildsrc/Dependencies.kt",
+		"/F/Workspace/Android/Prototype/GreenLeaf/debug.keystore",
+		"/F/Workspace/Android/Prototype/GreenLeaf/app/proguard-rules.pro",
+		"/F/Workspace/Android/Prototype/GreenLeaf/app/.gitignore",
+		"/F/Workspace/Android/Prototype/GreenLeaf/README.md",
+		"/C/Users/Akira/AppData/Local/Temp/BNZ.6193fcdb199f641/README.txt",
+		"/C/Users/Akira/Downloads/Compressed/Bandizip Professional 7.21 (x64)_SadeemPC.com/Your Files Is Here/Instructions !!! 3.txt",
+		"/E/Volume and Brightness Control v0.4.1 Installer/Licenses/License.txt",
+		"/E/Volume and Brightness Control v0.4.1 Installer/Licenses/GPL3-license.txt",
+		"/E/Volume and Brightness Control v0.4.1 Installer/Licenses/Copyright.txt",
+		"/E/Volume and Brightness Control v0.4.1 Installer/README.txt",
+		"/C/Users/Akira/Downloads/Compressed/IObit Driver Booster 7.5.0.753 incl Loader [CrackingPatching]/IObit Driver Booster 7.5.0.753 incl Loader [CrackingPatching]/How to Install.txt",
+		"/C/Users/Akira/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": true,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.Terminus":
+	{
+		"height": 126.0
+	},
+	"output.exec":
+	{
+		"height": 126.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/User/android-build.sublime-build",
+	"project": "Food-Ordering-App-Server.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"F:\\Workspace\\Flutter\\Projects\\Food-Ordering-App\\Food-Ordering-App.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 339.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
