@@ -19,24 +19,26 @@ loginRouter.route('/')
     user_pass = req.body.user_pass;
 
     const [email] = await db.query(`SELECT * FROM users_details WHERE user_email = "${user_email}";`);
+    if(email.length == 0){
+        res.statusCode = 403;
+        res.setHeader('Content-Type', 'text/json');
+        res.json({"status":"Account does not exist!"});
+        return;
+    }
+
     user_id = email[0].user_id;
     const [pass] = await db.query(`SELECT * FROM users WHERE user_id = "${user_id}";`);
 
     // console.log(pass[0].user_pass);
 
-    if(email.length == 0){
+    if (pass[0].user_pass != user_pass){
         res.statusCode = 403;
         res.setHeader('Content-Type', 'text/json');
-        res.json({"status":"false"});
-    }
-    else if (pass[0].user_pass == user_pass){
+        res.json({"status":"Wrong password!"});
+    }else{
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/json');
         res.json(email[0]);
-    }else{
-        res.statusCode = 403;
-        res.setHeader('Content-Type', 'text/json');
-        res.json({"status":"false"});
     }
 });
 
@@ -51,32 +53,32 @@ loginRouter.route('/newuser')
         isAdmin: 0 
     }
 
-    const [uid] = await db.query(`SELECT * FROM users where user_id = "${user.user_id}";`);
-
-    if(uid.length != 0){
-        res.statusCode = 409;
+    const [email] = await db.query(`SELECT * FROM users_details where user_email = "${user.user_email}";`);
+    console.log(email.length);
+    if(email.length != 0){
+        res.statusCode = 403;
         res.setHeader('Content-Type', 'text/json');
-        res.json({"status":"false"});
+        res.json({"status":"Account already exists"});
     }
     else {
         db.query(`
             INSERT INTO users (
-                user_id, user_name, user_pass, isAdmin
+            user_id, user_name, user_pass, isAdmin
             ) VALUES (
-                "${user.user_id}", "${user.user_name}", "${user.user_pass}", 0
+            "${user.user_id}", "${user.user_name}", "${user.user_pass}", 0
             );
-        `);
+            `);
         moment = require('moment');
         user_joindt = moment().format("YYYY-MM-DD");
         db.query(`
             INSERT INTO users_details (
-                user_id, user_email, user_phno, user_addline, user_pincode, 
-                user_joindt
+            user_id, user_email, user_phno, user_addline, user_pincode, 
+            user_joindt
             ) VALUES (
-                "${user.user_id}", "${user.user_email}", "", "", "", 
-                "${user_joindt}"
+            "${user.user_id}", "${user.user_email}", "", "", "", 
+            "${user_joindt}"
             );
-        `);
+            `);
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/json');
         res.json(user);
