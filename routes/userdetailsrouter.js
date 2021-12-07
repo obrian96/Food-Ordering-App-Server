@@ -20,11 +20,13 @@ userdetailsRouter.route('/')
     const [uname] = await db.query(`SELECT * FROM users_details, users where users.user_id = users_details.user_id having users.user_id = "${user_id}";`);
 
     if(uname.length == 0){
+        console.log("Please login again.");
         res.statusCode = 403;
         res.setHeader('Content-Type', 'text/json');
-        res.json({status:false});
+        res.json({"status": "Please login again."});
     }
     else {
+        console.log(JSON.stringify(uname[0], null, 4));
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/json');
         res.json(uname[0]);

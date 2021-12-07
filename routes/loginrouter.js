@@ -77,7 +77,7 @@ loginRouter.route('/newuser')
             user_id, user_email, user_phno, user_addline, user_pincode, 
             user_joindt
             ) VALUES (
-            "${user.user_id}", "${user.user_email}", "", "", "", 
+            "${user.user_id}", "${user.user_email}", "", "", 0, 
             "${user_joindt}"
             );
             `);
