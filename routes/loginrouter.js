@@ -18,6 +18,8 @@ loginRouter.route('/')
     user_email = req.body.user_email;
     user_pass = req.body.user_pass;
 
+    console.log("Email: " + user_email + "\nPassword: " + user_pass);
+
     const [email] = await db.query(`SELECT * FROM users_details WHERE user_email = "${user_email}";`);
     if(email.length == 0){
         res.statusCode = 403;
@@ -38,7 +40,7 @@ loginRouter.route('/')
     }else{
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/json');
-        res.json(email[0]);
+        res.json(pass[0]);
     }
 });
 
