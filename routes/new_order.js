@@ -40,6 +40,7 @@ newOrderRoute.route('/')
 		// 	console.log(orderItems);
 		// }
 		var user_id = req.body.user_id;
+		var total_price = req.body.total_price;
 		var order_items = req.body.order_items;
 		if (order_items == '[]') {
 			res.statusCode = 401;
@@ -63,7 +64,7 @@ newOrderRoute.route('/')
 
 		// Insert new order record to orders table
 		const [orders_result] = await db.query(`
-			INSERT INTO orders (user_id) VALUES ("${user_id}");
+			INSERT INTO orders (user_id, total_price) VALUES ("${user_id}", "${total_price}");
 			`);
 
 		// Get order id
