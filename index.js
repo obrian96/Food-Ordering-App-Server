@@ -6,7 +6,6 @@ const express = require("express");
 
 const config = require('config');
 
-
 const hostname = config.get('app.hostname');
 const port = config.get('app.port');
 
@@ -33,6 +32,11 @@ app.use('/orderhstry', orderhstryRouter);
 const restaurantRouter = require('./routes/restaurantrouter');
 app.use('/restaurant', restaurantRouter);
 
+const orderManagementRoute = require('./routes/order_management');
+app.use('/order_management', orderManagementRoute);
+
+const newOrderRoute = require('./routes/new_order');
+app.use('/new_order', newOrderRoute);
 
 const server = http.createServer(app);
 

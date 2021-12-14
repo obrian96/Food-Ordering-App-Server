@@ -21,12 +21,15 @@ orderhstryRouter.route('/')
     next();
 })
 .post(async (req, res, next) => {
-    const order = { order_price: 0,
-                    order_date: req.body.order_date,
-                    order_qty: req.body.order_qty,
-                    order_user_id: req.body.order_user_id,  
-                    order_dish_id: req.body.order_dish_id
-                }
+    moment = require('moment');
+    order_date = moment().format("YYYY-MM-DD");
+    const order = {
+        order_price: 0,
+        order_date: order_date,
+        order_qty: req.body.order_qty,  
+        order_dish_id: req.body.order_dish_id,
+        order_user_id: req.body.order_user_id,
+    };
     
     const [temp] = await db.query(`SELECT dish_price FROM dishes WHERE dish_id = ${order.order_dish_id}`);
     order.order_price = temp[0].dish_price * order.order_qty;
@@ -54,7 +57,7 @@ async function main(){
       database: config.get('db.database'),
       timezone: config.get('db.timezone'),
       charset: config.get('db.charset')
-    });  
+  });  
 }
 main();
 
