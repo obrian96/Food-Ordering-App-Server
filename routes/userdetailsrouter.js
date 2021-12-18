@@ -36,17 +36,25 @@ userdetailsRouter.route('/')
   try {
     const user = {
       user_id: req.body.user_id,
+      user_name: req.body.user_name,
+      user_image: req.body.user_image,
       user_email: req.body.user_email,
+      user_pass: req.body.user_pass,
       user_phno: req.body.user_phno,
       user_addline: req.body.user_addline,
-      user_pincode: req.body.user_pincode,
     }
     // console.log(user.user_addline, user.user_pincode);
-    let sql = `UPDATE users_details SET user_email = "${user.user_email}", 
-      user_phno = "${user.user_phno}", user_addline= "${user.user_addline}", 
-      user_pincode= "${user.user_pincode}" WHERE user_id = "${user.user_id}";`;
-    const [result] = await db.query(sql);
-    console.log(result.affectedRows);
+    let sql1 = `UPDATE users_details SET user_email = "${user.user_email}", 
+    user_phno = "${user.user_phno}", user_addline = "${user.user_addline}" 
+    WHERE user_id = "${user.user_id}";`;
+
+    let sql2 = `UPDATE users SET user_name = "${user.user_name}", 
+    user_pass = "${user.user_pass}", user_image = "${user.user_image}" 
+    WHERE user_id = "${user.user_id}";`;
+
+    const [result1] = await db.query(sql1);
+    const [result2] = await db.query(sql2);
+    console.log(result1.affectedRows, result2.affectedRows);
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/json');
     res.json({"message": "Profile updated!"});
@@ -54,7 +62,7 @@ userdetailsRouter.route('/')
     console.log(e);
     res.statusCode = 401;
     res.setHeader('Content-Type', 'text/plain');
-    res.json({status:e});
+    res.json({status:"false"});
   }
 });
 
@@ -85,6 +93,42 @@ userdetailsRouter.route('/newuser')
 })
 .delete((req, res, next) => {
   res.end('Will add feature to delete profile later!');
+});
+
+userdetailsRouter.route('/all_user')
+.post(async(req, res, next) => {
+  const admin_id = req.body.user_id;
+  console.log(admin_id);
+  try {
+    const [user_list] = await db.query(`SELECT * FROM users;`);
+    console.log(user_list);
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/json');
+    res.json(user_list);
+  } catch (e) {
+    console.log(e);
+    res.statusCode = 401;
+    res.setHeader('Content-Type', 'text/json');
+    res.json({status:false});
+  }
+});
+
+userdetailsRouter.route('/change_role')
+.post(async(req, res, next) => {
+  const user_id = req.body.user_id;
+  const isAdmin = req.body.isAdmin;
+  try {
+    const [result] = await db.query(`UPDATE users SET isAdmin = ${isAdmin} WHERE user_id = "${user_id}";`)
+    console.log(result);
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/json');
+    res.json({message:"Role changed"});
+  } catch (e) {
+    console.log(e);
+    res.statusCode = 401;
+    res.setHeader('Content-Type', 'text/json');
+    res.json({status:false});
+  }
 });
 
 async function main(){

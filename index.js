@@ -3,7 +3,7 @@ const morgan = require('morgan');
 const mysql = require("mysql2/promise");
 const cors = require("cors");
 const express = require("express");
-
+const bodyParser = require('body-parser');
 const config = require('config');
 
 const hostname = config.get('app.hostname');
@@ -11,10 +11,22 @@ const port = config.get('app.port');
 
 let db = null;
 const app = express();
+
+app.use(bodyParser.json({
+  limit: '50mb'
+}));
+
+app.use(bodyParser.urlencoded({
+  limit: '50mb',
+  parameterLimit: 100000,
+  extended: true 
+}));
+
+app.use(express.json());
+
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(cors());
-
 //////////////////////////////////
 
 const loginRouter = require('./routes/loginrouter');
@@ -54,5 +66,5 @@ async function main(){
 main();
 
 server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
+  console.log(`Server running at http://${hostname}:${port}/`);
 });

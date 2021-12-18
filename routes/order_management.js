@@ -126,97 +126,52 @@ function sortUserId(referenceList, targetList) {
 orderManagementRoute.route('/order_list')
 .post(async(req, res, next) => {
 	try {
-		var admin_id = req.body.admin_id;
 		var user_id = req.body.user_id;
 		console.log(user_id);
-		if (admin_id == "" || admin_id == '[]' || admin_id == undefined) {
-			res.statusCode = 401;
-			res.setHeader('Content-Type', 'text/plain');
-			res.json({status: "Admin id must not empty!"});
-			return;
-		}
-		const [isAdmin] = await db.query(`SELECT isAdmin FROM users WHERE user_id = "${admin_id}";`);
-		console.log(JSON.stringify(isAdmin, null, 4));
-		if (isAdmin == "" || isAdmin == '[]' || isAdmin == undefined) {
-			res.statusCode = 404;
-			res.setHeader('Content-Type', 'text/plain');
-			res.json({"statue":"Account does not exist!"});
-			return;
-		}
-		if(isAdmin[0].isAdmin == 1) {
-			console.log(user_id);
-			const [order_list] = await db.query(`SELECT * FROM orders WHERE user_id = '${user_id}' ORDER BY id DESC;`);
-			console.log(order_list);
-			res.statusCode = 200;
-			res.setHeader('Content-Type', 'text/plain');
-			res.json(order_list);
-		} else {
-			res.statusCode = 401;
-			res.setHeader('Content-Type', 'text/plain');
-			res.json({"status":"Unauthorized"});
-		}
+		const [order_list] = await db.query(`SELECT * FROM orders WHERE user_id = '${user_id}' ORDER BY id DESC;`);
+		console.log(order_list);
+		res.statusCode = 200;
+		res.setHeader('Content-Type', 'text/plain');
+		res.json(order_list);
 	} catch (e) {
 		console.log(e);
 	}
 });
 
-
 orderManagementRoute.route('/order_items')
 .post(async(req, res, next) => {
 	try {
-		var admin_id = req.body.admin_id;
 		var order_id = req.body.order_id;
-		console.log(admin_id);
-		if (admin_id == "" || admin_id == '[]' || admin_id == undefined) {
-			res.statusCode = 401;
-			res.setHeader('Content-Type', 'text/plain');
-			res.json({status: "Admin id must not empty!"});
-			return;
-		}
-		const [isAdmin] = await db.query(`SELECT isAdmin FROM users WHERE user_id = "${admin_id}";`);
-		console.log(JSON.stringify(isAdmin, null, 4));
-		if (isAdmin == "" || isAdmin == '[]' || isAdmin == undefined) {
+		console.log(order_id);
+		sql = `SELECT * FROM order_items WHERE order_id = '${order_id}';`;
+		const [order_items] = await db.query(sql);
+		console.log(order_items.length);
+		if (order_items.length == 0) {
 			res.statusCode = 404;
 			res.setHeader('Content-Type', 'text/plain');
-			res.json({"status":"Account does not exist!"});
+			res.json({"status":"Order not found!"});
 			return;
 		}
-		if(isAdmin[0].isAdmin == 1) {
-			console.log(order_id);
-			sql = `SELECT * FROM order_items WHERE order_id = '${order_id}';`;
-			const [order_items] = await db.query(sql);
-			console.log(order_items.length);
-			if (order_items.length == 0) {
-				res.statusCode = 404;
-				res.setHeader('Content-Type', 'text/plain');
-				res.json({"status":"Order not found!"});
-				return;
-			}
-			let item_id_list = [];
-			for (let i = 0; i < order_items.length; i++) {
-				console.log(order_items[i].item_id);
-				item_id_list.push("'" + order_items[i].item_id + "'");
-			}
-			let query = `
-			SELECT * FROM dishes WHERE dish_id IN (${item_id_list});
-			`;
-			console.log(query);
-			const [dish_list] = await db.query(query);
-			let total_price = 0;
-			for (i in order_items) {
-				total_price += order_items[i].price;
-			}
-			console.log('Total Price: ' + total_price);
-			console.log(JSON.stringify({"order_items":order_items,"dish_list":dish_list}, null, 4));
-			let sorted_dish_list = sortDishId(item_id_list, dish_list)
-			res.statusCode = 200;
-			res.setHeader('Content-Type', 'text/plain');
-			res.json({"order_items":order_items,"dish_list":sorted_dish_list});
-		} else {
-			res.statusCode = 401;
-			res.setHeader('Content-Type', 'text/plain');
-			res.json({"status":"Unauthorized"});
+		let item_id_list = [];
+		for (let i = 0; i < order_items.length; i++) {
+			console.log(order_items[i].item_id);
+			item_id_list.push("'" + order_items[i].item_id + "'");
 		}
+		let query = `
+		SELECT * FROM dishes WHERE dish_id IN (${item_id_list});
+		`;
+		console.log(query);
+		const [dish_list] = await db.query(query);
+		let total_price = 0;
+		for (i in order_items) {
+			total_price += order_items[i].price;
+		}
+		console.log('Total Price: ' + total_price);
+		console.log(JSON.stringify({"order_items":order_items,"dish_list":dish_list}, null, 4));
+		let sorted_dish_list = sortDishId(item_id_list, dish_list)
+		res.statusCode = 200;
+		res.setHeader('Content-Type', 'text/plain');
+		res.json({"order_items":order_items,"dish_list":sorted_dish_list});
 	} catch (e) {
 		console.log(e);
 	}
@@ -238,6 +193,24 @@ function sortDishId(referenceList, targetList) {
 	console.log('---\nOrder Dish Sorting Complete!\n---');
 	return sortedList;
 }
+
+orderManagementRoute.route('/change_order_status')
+.post(async(req, res, next) => {
+	const order_id = req.body.order_id;
+	const order_status = req.body.order_status;
+	try {
+		const [result] = await db.query(`UPDATE orders SET status = ${order_status} WHERE id = ${order_id};`)
+		console.log(result);
+		res.statusCode = 200;
+		res.setHeader('Content-Type', 'text/json');
+		res.json({message:"Order Status Changed"});
+	} catch (e) {
+		console.log(e);
+		res.statusCode = 401;
+		res.setHeader('Content-Type', 'text/json');
+		res.json({status:false});
+	}
+});
 
 async function main() {
 	db = await mysql.createConnection({
